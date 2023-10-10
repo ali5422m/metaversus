@@ -1,6 +1,11 @@
-import styles from '../styles';
+import styles from "@/app";
 
-const StartSteps = ({ number, text }) => (
+interface StartStepsProps {
+    number: string;
+    text: string;
+}
+
+const StartSteps = ({ number, text }: StartStepsProps) => (
   <div className={`${styles.flexCenter} flex-row`}>
     <div
       className={`${styles.flexCenter} w-[70px] h-[70px] rounded-[24px] bg-[#323F5D]`}

@@ -1,16 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import styles from "@/app";
+import {staggerContainer} from "@/utils/motion";
+import {TitleText, TypingText} from "@/app/components/CustomTexts";
+import {insights} from "@/constants";
+import InsightCard from "@/app/components/InsightCard";
 
-import styles from '../styles';
-import { insights } from '../constants';
-import { staggerContainer } from '../utils/motion';
-import { InsightCard, TitleText, TypingText } from '../components';
+
 
 const Insights = () => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainer({})}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}

@@ -4,6 +4,8 @@ import Explore from "@/app/components/Explore";
 import NavBar from "@/app/NavBar";
 import GetStarted from "@/app/components/GetStarted";
 import WhatsNew from "@/app/components/WhatsNew";
+import Insights from "@/app/components/Insights";
+import Feedback from "@/app/components/Feedback";
 
 
 export default function Home() {
@@ -21,11 +23,11 @@ export default function Home() {
                 <div className="gradient-03 z-0" />
                 <WhatsNew />
             </div>
-            {/*<div className="relative">*/}
-            {/*    <Insights />*/}
-            {/*    <div className="gradient-03 z-0" />*/}
-            {/*    <Feedback />*/}
-            {/*</div>*/}
+            <div className="relative">
+                <Insights />
+                <div className="gradient-03 z-0" />
+                <Feedback />
+            </div>
             {/*<Footer />*/}
         </div>
     )
