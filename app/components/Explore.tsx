@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import styles from "@/app";
+import {staggerContainer} from "@/utils/motion";
+import {TitleText, TypingText} from "@/app/components/CustomTexts";
+import {exploreWorlds} from "@/constants";
+import ExploreCard from "@/app/components/ExploreCard";
 
-import styles from '../styles';
-import { exploreWorlds } from '../constants';
-import { staggerContainer } from '../utils/motion';
-import { ExploreCard, TitleText, TypingText } from '../components';
 
 const Explore = () => {
   const [active, setActive] = useState('world-2');
@@ -14,7 +15,7 @@ const Explore = () => {
   return (
     <section className={`${styles.paddings}`} id="explore">
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer({})}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
