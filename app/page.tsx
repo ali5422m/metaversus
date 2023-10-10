@@ -6,6 +6,8 @@ import GetStarted from "@/app/components/GetStarted";
 import WhatsNew from "@/app/components/WhatsNew";
 import Insights from "@/app/components/Insights";
 import Feedback from "@/app/components/Feedback";
+import World from "@/app/components/World";
+import Footer from "@/app/components/Footer";
 
 
 export default function Home() {
@@ -23,12 +25,13 @@ export default function Home() {
                 <div className="gradient-03 z-0" />
                 <WhatsNew />
             </div>
+            <World />
             <div className="relative">
                 <Insights />
                 <div className="gradient-03 z-0" />
                 <Feedback />
             </div>
-            {/*<Footer />*/}
+            <Footer />
         </div>
     )
 }
