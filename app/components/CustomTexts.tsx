@@ -4,12 +4,12 @@ import {ReactNode} from "react";
 
 interface TypingTextProps {
   title: string;
-  textStyles: string;
+  textStyles?: string;
 }
 
 interface TitleText {
   title: ReactNode;
-  textStyles: string;
+  textStyles?: string;
 }
 
 import { motion } from 'framer-motion';
