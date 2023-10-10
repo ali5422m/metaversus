@@ -1,3 +1,37 @@
+import {Variants} from "framer-motion";
+
+interface SlideIn {
+  direction: string;
+  type: string;
+  delay: number;
+  duration: number;
+}
+interface StaggerContainerProps {
+  staggerChildren?: number;
+  delayChildren?: number;
+}
+
+interface TextVariant {
+  delay: number ;
+}
+
+interface FadeIn {
+  direction: string;
+  type: string;
+  delay: number;
+  duration: number;
+}
+
+interface PlanetVariants {
+  direction?: string;
+}
+
+interface ZoomIn {
+  delay: number;
+  duration: number;
+}
+
+
 export const navVariants = {
   hidden: {
     opacity: 0,
@@ -19,7 +53,7 @@ export const navVariants = {
   },
 };
 
-export const slideIn = (direction, type, delay, duration) => ({
+export const slideIn = ({direction, type, delay, duration}: SlideIn): Variants => ({
   hidden: {
     x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
     y: direction === 'up' ? '100%' : direction === 'down' ? '100%' : 0,
@@ -36,17 +70,17 @@ export const slideIn = (direction, type, delay, duration) => ({
   },
 });
 
-export const staggerContainer = (staggerChildren, delayChildren) => ({
+export const staggerContainer = ({staggerChildren, delayChildren}: StaggerContainerProps): Variants => ({
   hidden: {},
   show: {
     transition: {
-      staggerChildren,
-      delayChildren,
+      staggerChildren: staggerChildren,
+      delayChildren: delayChildren,
     },
   },
 });
 
-export const textVariant = (delay) => ({
+export const textVariant = ({delay}: TextVariant): Variants => ({
   hidden: {
     y: 50,
     opacity: 0,
@@ -57,7 +91,7 @@ export const textVariant = (delay) => ({
     transition: {
       type: 'spring',
       duration: 1.25,
-      delay,
+      delay:  delay,
     },
   },
 });
@@ -87,7 +121,7 @@ export const textVariant2 = {
   },
 };
 
-export const fadeIn = (direction, type, delay, duration) => ({
+export const fadeIn = ({direction, type, delay, duration}: FadeIn): Variants => ({
   hidden: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
@@ -106,7 +140,7 @@ export const fadeIn = (direction, type, delay, duration) => ({
   },
 });
 
-export const planetVariants = (direction) => ({
+export const planetVariants = ({direction}: PlanetVariants): Variants => ({
   hidden: {
     x: direction === 'left' ? '-100%' : '100%',
     rotate: 120,
@@ -122,7 +156,7 @@ export const planetVariants = (direction) => ({
   },
 });
 
-export const zoomIn = (delay, duration) => ({
+export const zoomIn = ({delay, duration}: ZoomIn): Variants => ({
   hidden: {
     scale: 0,
     opacity: 0,
